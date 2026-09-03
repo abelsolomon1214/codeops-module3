@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Doro Wat",
+    "price": 240,
+    "category": "Main",
+    "spicy": true
+  },
+  {
+    "id": 2,
+    "name": "Buna",
+    "price": 80,
+    "category": "Drink",
+    "spicy": false
+  },
+  {
+    "id": 3,
+    "name": "Shiro",
+    "price": 150,
+    "category": "Main",
+    "spicy": false
+  },
+  {
+    "id": 4,
+    "name": "Tibs",
+    "price": 250,
+    "category": "Main",
+    "spicy": true
+  },
+  {
+    "id": 5,
+    "name": "Chechebsa",
+    "price": 120,
+    "category": "Breakfast",
+    "spicy": false
+  },
+  {
+    "id": 6,
+    "name": "Firfir",
+    "price": 140,
+    "category": "Breakfast",
+    "spicy": true
+  },
+  {
+    "id": 7,
+    "name": "Dabo",
+    "price": 100,
+    "category": "Breakfast",
+    "spicy": false
+  },
+  {
+    "id": 8,
+    "name": "Beyaynetu",
+    "price": 220,
+    "category": "Main",
+    "spicy": false
+  },
+  {
+    "id": 9,
+    "name": "Fetira",
+    "price": 130,
+    "category": "Breakfast",
+    "spicy": false
+  },
+  {
+    "id": 10,
+    "name": "Baklava",
+    "price": 160,
+    "category": "Dessert",
+    "spicy": false
+  }
+]
