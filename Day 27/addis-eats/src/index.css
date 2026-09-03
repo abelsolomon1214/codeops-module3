@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f3ea;
+  color: #2d241f;
+}
+
+.header {
+  text-align: center;
+  padding: 45px 20px;
+  background: #6f4e37;
+  color: white;
+}
+
+.header h1 {
+  margin: 0 0 10px;
+  font-size: 2.5rem;
+}
+
+.header p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.restaurant-name,
+.calculated-price {
+  text-align: center;
+}
+
+.restaurant-name {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.calculated-price {
+  margin-bottom: 35px;
+}
+
+.menu h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 2rem;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 24px;
+}
+
+.menu-card {
+  overflow: hidden;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 10%);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgb(0 0 0 / 18%);
+}
+
+.menu-image {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.menu-card-content {
+  padding: 20px;
+}
+
+.menu-card h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+.description {
+  line-height: 1.5;
+  min-height: 48px;
+}
+
+.category {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.spicy-badge {
+  color: #b33a22;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.drink .category {
+  background: #d9ead3;
+}
+
+.breakfast .category {
+  background: #fce5cd;
+}
+
+.main .category {
+  background: #ead1dc;
+}
+
+.dessert .category {
+  background: #fff2cc;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 30px;
+  background: white;
+  border-radius: 14px;
+}
+
+.footer {
+  margin-top: 45px;
+  padding: 25px 20px;
+  text-align: center;
+  background: #6f4e37;
+  color: white;
+}
+
+.footer p {
+  margin: 6px 0;
+}
+
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  main {
+    padding: 25px 15px;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+}
