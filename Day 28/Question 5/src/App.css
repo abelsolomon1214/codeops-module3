@@ -1,0 +1,37 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.category-bar {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 8px 14px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.selected {
+  font-weight: bold;
+}
+
+.dish-card {
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.dish-card button {
+  margin-left: 0;
+}
