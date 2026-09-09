@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Shiro",
+    "description": "Smooth chickpea stew seasoned with Ethiopian spices and served with fresh injera.",
+    "price": 180,
+    "category": "Vegetarian",
+    "spicy": false,
+    "image": "/images/shiro.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Tibs",
+    "description": "Tender beef sautéed with onions, peppers and aromatic Ethiopian spices.",
+    "price": 350,
+    "category": "Meat",
+    "spicy": true,
+    "image": "/images/tibs.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Beyaynetu",
+    "description": "A colorful combination of traditional Ethiopian vegetarian dishes served with injera.",
+    "price": 250,
+    "category": "Vegetarian",
+    "spicy": false,
+    "image": "/images/beyaynetu.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Doro Wot",
+    "description": "Rich and spicy chicken stew slowly cooked with berbere, served with an egg and injera.",
+    "price": 450,
+    "category": "Meat",
+    "spicy": true,
+    "image": "/images/doro-wet.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Kitfo",
+    "description": "Seasoned minced beef prepared with traditional Ethiopian butter and spices.",
+    "price": 500,
+    "category": "Meat",
+    "spicy": false,
+    "image": "/images/tibs.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Fasolia",
+    "description": "Fresh green beans and carrots cooked with onions and Ethiopian spices.",
+    "price": 200,
+    "category": "Vegetarian",
+    "spicy": false,
+    "image": "/images/firfir.jpg"
+  }
+]
