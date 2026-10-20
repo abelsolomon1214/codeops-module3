@@ -1,0 +1,185 @@
+.ordersPage {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 56px 5vw 96px;
+}
+
+.ordersHeader {
+  margin-bottom: 32px;
+}
+
+.ordersHeader h1 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  margin: 8px 0 12px;
+}
+
+.ordersHeader p {
+  max-width: 720px;
+  color: #57534e;
+  line-height: 1.6;
+}
+
+.sessionBar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 22px;
+  margin-bottom: 28px;
+  border-radius: 16px;
+  background: #f5f5f4;
+  border: 1px solid #e7e5e4;
+}
+
+.sessionLabel {
+  color: #57534e;
+}
+
+.sessionActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.sessionBtn,
+.sessionBtnSecondary {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid #d6d3d1;
+  background: #ffffff;
+}
+
+.sessionBtn:disabled,
+.sessionBtnSecondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ordersList {
+  display: grid;
+  gap: 18px;
+  margin-bottom: 36px;
+}
+
+.orderCard {
+  padding: 24px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid #e7e5e4;
+}
+
+.orderCardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.orderId {
+  display: inline-block;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.85rem;
+  color: #78716c;
+}
+
+.orderMeta {
+  color: #57534e;
+  font-size: 0.92rem;
+  margin-top: 4px;
+}
+
+.orderStatusWrap {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.statusConfirmed {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(22, 101, 52, 0.1);
+  color: #166534;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.statusCancelled,
+.cancelledBadge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(185, 28, 28, 0.1);
+  color: #991b1b;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.orderTotal {
+  font-size: 1.15rem;
+}
+
+.orderItems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.orderItemPill {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #fafaf9;
+  border: 1px solid #e7e5e4;
+  font-size: 0.85rem;
+}
+
+.orderFooter {
+  border-top: 1px solid #f5f5f4;
+  padding-top: 14px;
+}
+
+.cancelControl {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.cancelBtn {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #991b1b;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.cancelBtnTestBypass {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #fff7ed;
+  color: #9a3412;
+  border: 1px dashed #fdba74;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cancelFeedback {
+  font-size: 0.875rem;
+  color: #b91c1c;
+  font-weight: 500;
+}
+
+.ordersActions {
+  display: flex;
+  gap: 14px;
+}
