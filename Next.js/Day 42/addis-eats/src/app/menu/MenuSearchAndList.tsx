@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 import useSWR from "swr";
 import { fetcher } from "@/lib/fetcher";
-import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
+import DishList from "./DishList";
 
 export default function MenuSearchAndList() {
   const searchParams = useSearchParams();
@@ -21,7 +21,7 @@ export default function MenuSearchAndList() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedTerm(term);
-      setPage(1); // reset to page 1 on search change
+      setPage(1);
       const params = new URLSearchParams();
       if (term) params.set("q", term);
       params.set("page", "1");
@@ -30,16 +30,17 @@ export default function MenuSearchAndList() {
     return () => clearTimeout(timer);
   }, [term, router]);
 
-  // SWR Query: uses endpoint with query/page
+  // SWR Query with debounced search term and page
   const endpoint = debouncedTerm
     ? `/api/dishes?q=${encodeURIComponent(debouncedTerm)}&page=${page}`
     : `/api/dishes?page=${page}`;
 
   const { data, isLoading } = useSWR(endpoint, fetcher, {
-    keepPreviousData: true, // Prevents layout flash while fetching next page/search
+    keepPreviousData: true,
   });
 
-  const dishes = data?.dishes || data || [];
+  // Extract dishes array from API response structure
+  const dishes = data?.dishes || (Array.isArray(data) ? data : []);
 
   const handleNextPage = () => {
     const nextPage = page + 1;
@@ -63,35 +64,45 @@ export default function MenuSearchAndList() {
 
   return (
     <div>
-      <div style={{ marginBottom: "1.5rem" }}>
+      <div style={{ marginBottom: "2rem" }}>
         <input
           type="text"
           placeholder="Search dishes (e.g. Tibs, Shiro)..."
           value={term}
           onChange={(e) => setTerm(e.target.value)}
-          style={{ padding: "0.6rem", width: "100%", maxWidth: "400px", fontSize: "1rem", borderRadius: "4px", border: "1px solid #ccc" }}
+          style={{
+            padding: "0.8rem 1rem",
+            width: "100%",
+            maxWidth: "450px",
+            fontSize: "1rem",
+            borderRadius: "6px",
+            border: "1px solid #d1d5db",
+            boxShadow: "0 1px 2px rgba(0,0,0,0.05)"
+          }}
         />
       </div>
 
-      {isLoading && <p>Loading dishes...</p>}
+      {isLoading && <p style={{ marginBottom: "1rem", color: "#6b7280" }}>Searching dishes...</p>}
 
-      <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))" }}>
-        {Array.isArray(dishes) && dishes.map((dish: any) => (
-          <div key={dish.id} style={{ border: "1px solid #ccc", padding: "1rem", borderRadius: "8px", background: "#fff" }}>
-            <h3>{dish.name}</h3>
-            <p>{dish.price} ETB</p>
-            <Link href={`/menu/${dish.id}`} style={{ color: "blue" }}>View Dish &rarr;</Link>
-          </div>
-        ))}
-      </div>
+      {/* Render rich DishList cards with images, descriptions, and Add to Cart */}
+      <DishList dishes={dishes} />
 
-      <div style={{ marginTop: "2rem", display: "flex", gap: "1rem", alignItems: "center" }}>
-        <button onClick={handlePrevPage} disabled={page === 1} style={{ padding: "0.5rem 1rem", cursor: page === 1 ? "not-allowed" : "pointer" }}>
-          Previous Page
+      <div style={{ marginTop: "2.5rem", display: "flex", gap: "1rem", alignItems: "center" }}>
+        <button
+          onClick={handlePrevPage}
+          disabled={page === 1}
+          className="button button--secondary"
+          style={{ opacity: page === 1 ? 0.5 : 1, cursor: page === 1 ? "not-allowed" : "pointer" }}
+        >
+          ← Previous Page
         </button>
-        <span>Page {page}</span>
-        <button onClick={handleNextPage} style={{ padding: "0.5rem 1rem", cursor: "pointer" }}>
-          Next Page
+        <span style={{ fontWeight: 500 }}>Page {page}</span>
+        <button
+          onClick={handleNextPage}
+          className="button button--secondary"
+          style={{ cursor: "pointer" }}
+        >
+          Next Page →
         </button>
       </div>
     </div>
