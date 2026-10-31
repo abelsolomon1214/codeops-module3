@@ -1,0 +1,72 @@
+
+.notFoundPage {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.notFound {
+  width: min(var(--max-width), 90vw);
+  margin: 0 auto;
+  padding: 100px 0;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.notFoundNumber {
+  font-size: clamp(8rem, 18vw, 15rem);
+  font-weight: 700;
+  line-height: 0.8;
+  letter-spacing: -0.08em;
+  color: var(--surface-muted);
+}
+
+.notFoundContent {
+  max-width: 620px;
+}
+
+.notFoundContent h1 {
+  margin: 18px 0 20px;
+  max-width: 600px;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.notFoundContent p {
+  max-width: 540px;
+  margin-bottom: 32px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.notFoundActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+@media (max-width: 700px) {
+  .notFound {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 64px 0;
+  }
+
+  .notFoundNumber {
+    font-size: clamp(6rem, 24vw, 10rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .notFoundActions {
+    flex-direction: column;
+  }
+
+  .notFoundActions :global(.button) {
+    justify-content: center;
+  }
+}
