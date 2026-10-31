@@ -1,0 +1,38 @@
+
+.menuLoading {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 80px 5vw 120px;
+}
+
+.menuLoadingHeader {
+  max-width: 680px;
+  margin-bottom: 56px;
+}
+
+.menuLoadingGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.menuLoadingCard {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--surface);
+}
+
+.menuLoadingBody {
+  padding: 28px;
+}
+
+@media (max-width: 700px) {
+  .menuLoading {
+    padding: 48px 4vw 80px;
+  }
+
+  .menuLoadingGrid {
+    grid-template-columns: 1fr;
+  }
+}

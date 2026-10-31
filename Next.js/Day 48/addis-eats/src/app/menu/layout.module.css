@@ -1,0 +1,26 @@
+
+.menuLayout {
+  width: min(100% - 40px, var(--max-width));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 40px;
+  align-items: start;
+}
+
+.menuLayoutContent {
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .menuLayout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 620px) {
+  .menuLayout {
+    width: min(100% - 28px, var(--max-width));
+  }
+}
